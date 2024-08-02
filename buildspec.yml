@@ -1,0 +1,19 @@
+version: 0.2
+env:
+  secrets-manager:
+    DOCKERHUB_PASS: "DockerLogin:DOCKER_P"
+    DOCKERHUB_USERNAME: "DockerLogin:DOCKER_U"
+phases:
+  build:
+    commands:
+      - echo Building budgetCompanionNginx, budgetCompanionFrontend, and budgetCompanionBackend images
+      - echo "$DOCKERHUB_PASS" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+      - docker build -t ardiank/budgetCompanionNginx -f ./nginx/Dockerfile ./nginx
+      - docker build -t ardiank/budgetCompanionFrontend ./frontend
+      - docker build -t ardiank/budgetCompanionBackend ./backend
+  post_build:
+    commands:
+      - echo Pushing images to Docker Hub
+      - docker push ardiank/budgetCompanionNginx
+      - docker push ardiank/budgetCompanionFrontend
+      - docker push ardiank/budgetCompanionBackend

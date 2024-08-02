@@ -1,0 +1,33 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "nginx",
+            "image": "ardiank/budgetCompanionNginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["frontend", "backend"],
+            "memory": 300   
+        },
+        {
+            "name": "frontend",
+            "image": "ardiank/budgetCompanionFrontend",
+            "hostname": "frontend",
+            "essential": false,
+            "memory": 300
+        },
+        {
+            "name": "backend",
+            "image": "ardiank/budgetCompanionBackend",
+            "hostname": "backend",
+            "essential": false,
+            "memory": 300
+        }
+    ]
+}
