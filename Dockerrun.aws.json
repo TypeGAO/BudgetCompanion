@@ -6,16 +6,6 @@
             "image": "ardiank/budgetcompanionnginx",
             "hostname": "nginx",
             "essential": true,
-            "environment": [
-                {
-                    "name": "DOCKERHUB_USERNAME",
-                    "valueFrom": "arn:aws:secretsmanager:region:account-id:secret:dockerhub/credentials:SecretString:username"
-                },
-                {
-                    "name": "DOCKERHUB_PASSWORD",
-                    "valueFrom": "arn:aws:secretsmanager:region:account-id:secret:dockerhub/credentials:SecretString:password"
-                }
-                ],
             "portMappings": [
                 {
                     "hostPort": 80,
