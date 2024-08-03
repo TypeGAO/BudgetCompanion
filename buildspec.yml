@@ -8,12 +8,12 @@ phases:
     commands:
       - echo Building budgetCompanionNginx, budgetCompanionFrontend, and budgetCompanionBackend images
       - echo "$DOCKERHUB_PASS" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
-      - docker build -t ardiank/budgetCompanionNginx -f ./nginx/Dockerfile ./nginx
-      - docker build -t ardiank/budgetCompanionFrontend ./frontend
-      - docker build -t ardiank/budgetCompanionBackend ./backend
+      - docker build -t ardiank/budgetcompanionnginx -f ./nginx/Dockerfile ./nginx
+      - docker build -t ardiank/budgetcompanionfrontend ./frontend
+      - docker build -t ardiank/budgetcompanionbackend ./backend
   post_build:
     commands:
       - echo Pushing images to Docker Hub
-      - docker push ardiank/budgetCompanionNginx
-      - docker push ardiank/budgetCompanionFrontend
-      - docker push ardiank/budgetCompanionBackend
+      - docker push ardiank/budgetcompanionnginx
+      - docker push ardiank/budgetcompanionfrontend
+      - docker push ardiank/budgetcompanionbackend
