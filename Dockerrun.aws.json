@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "nginx",
-            "image": "ardiank/budgetCompanionNginx",
+            "image": "ardiank/budgetcompanionnginx",
             "hostname": "nginx",
             "essential": true,
             "environment": [
@@ -27,14 +27,14 @@
         },
         {
             "name": "frontend",
-            "image": "ardiank/budgetCompanionFrontend",
+            "image": "ardiank/budgetcompanionfrontend",
             "hostname": "frontend",
             "essential": false,
             "memory": 300
         },
         {
             "name": "backend",
-            "image": "ardiank/budgetCompanionBackend",
+            "image": "ardiank/budgetcompanionbackend",
             "hostname": "backend",
             "essential": false,
             "memory": 300
