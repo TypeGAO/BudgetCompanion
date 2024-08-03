@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = 3001;
 
-app.get('/', (req, res)=>{
+app.get('/api', (req, res)=>{
     res.status(200);
     res.send("Welcome to root URL of Server");
 });
