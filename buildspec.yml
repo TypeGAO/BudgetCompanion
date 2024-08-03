@@ -1,8 +1,8 @@
 version: 0.2
 env:
   secrets-manager:
-    DOCKERHUB_PASS: "DockerLogin:DOCKER_P"
-    DOCKERHUB_USERNAME: "DockerLogin:DOCKER_U"
+    DOCKERHUB_PASS: "DockerLogin:PASSWD"
+    DOCKERHUB_USERNAME: "DockerLogin:USER"
 phases:
   build:
     commands:
