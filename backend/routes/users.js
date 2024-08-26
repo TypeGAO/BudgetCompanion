@@ -5,7 +5,7 @@ const router = express.Router();
 // Define a route
 router.get('/users', async (req, res) => {
     try {
-      const result = await db.query('SELECT * FROM "User"');
+      const result = await db.query('SELECT * FROM "user"');
       res.json(result.rows);
     } catch (err) {
       console.error(err);
